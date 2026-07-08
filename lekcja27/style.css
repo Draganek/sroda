@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Caveat+Brush&display=swap");
+
+body {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUHxLzloXWcNyeUMu_ZH6GI-B_PZZcXV3YprrH6FtzIg&s=10");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Caveat Brush", cursive;
+}
+
+#dodajElement {
+  margin: 0px auto 0px auto;
+  width: 1000px;
+  text-align: center;
+  padding: 10px;
+}
+
+li {
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+}
+
+li:hover {
+  color: red;
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+h1 {
+  font-size: 5em;
+  color: white;
+}
+
+#listaZadan {
+  font-family: "Caveat Brush", cursive;
+  font-size: 32px;
+  width: 500px;
+  background-color: #ffd35c;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  color: #003a91;
+}
+
+#przyciskDodaj, #przyciskDrukuj {
+  width: 250px;
+  height: 50px;
+  background-color: #fa4a0a;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  border: 2px solid #fa4a0a;
+  text-transform: uppercase;
+}
+
+#przyciskDrukuj:hover, #przyciskDodaj:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+input {
+  width: 330px;
+  height: 40px;
+  font-family: "Caveat Brush", cursive;
+  font-size: 25px;
+}
+
+p {
+  color: white;
+  font-size: 180%;
+}
