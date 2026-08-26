@@ -1,0 +1,72 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white
+}
+
+#container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    background: #0c505c;
+    background: radial-gradient(circle, rgba(12, 80, 92, 1) 0%, rgba(13, 1, 1, 1) 100%);
+    border: 5px black solid;
+}
+
+#select-picture {
+    display: none;
+}
+
+#image-button{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background-color: #00282d;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 25px;
+    border: 5px black solid;
+}
+
+#image-button:hover {
+cursor: pointer;
+background-color: #01343b;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+}
+
+#panel {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textbox {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border: 5px black solid;
+}
+
+.textbox:hover
+{
+cursor: pointer;
+opacity: 0.8;
+}
+
+canvas {
+    width: 100%;
+}

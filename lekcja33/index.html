@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEME GENERATOR</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>
+            <img width="100px" src="dog_icon.png">
+            Generator Memów!
+        </h1>
+        <div id="panel">
+            <label id="image-button">
+                <input type="file" id="select-picture">
+                Wczytaj zdjęcie
+            </label>
+            
+            <h3>Górny pasek</h3>
+            <input type="text" id="text-top" class="textbox" placeholder="Wpisz...">
+
+            <h3>Dolny pasek</h3>
+            <input type="text" id="text-bottom" class="textbox" placeholder="Wpisz...">
+            <canvas id="meme"></canvas>
+        </div>
+        
+    </div>
+</body>
+
+</html>
