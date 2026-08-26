@@ -1,12 +1,14 @@
-
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white
 }
 
@@ -25,20 +27,21 @@ body {
     display: none;
 }
 
-#image-button{
+#image-button {
     display: block;
     width: 100%;
     padding: 20px;
-    background-color: #00282d;
+    background-color: #74330b;
     border-radius: 5px;
     text-align: center;
     font-size: 25px;
+    font-weight: bold;
     border: 5px black solid;
 }
 
 #image-button:hover {
-cursor: pointer;
-background-color: #01343b;
+    cursor: pointer;
+    background-color: #91410f;
 }
 
 h1 {
@@ -61,12 +64,48 @@ h1 {
     border: 5px black solid;
 }
 
-.textbox:hover
-{
-cursor: pointer;
-opacity: 0.8;
+.box {
+    border: 5px black solid;
+    padding: 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 10px;
+}
+
+.textbox:hover {
+    cursor: pointer;
+    opacity: 0.8;
+
 }
 
 canvas {
     width: 100%;
+    border: 5px black solid;
+    display: none;
+    border-radius: 10px;
+}
+
+.offset-range {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+.offset-range::-webkit-slider-runnable-track {
+    height: 12px;
+    background: #666;
+    border-radius: 6px;
+}
+
+.offset-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    margin-top: -4px;
+    cursor: pointer;
+}
+
+.range {
+    font-size: 30px;
 }
