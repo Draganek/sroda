@@ -8,9 +8,11 @@ const rangeBottomLabel = document.querySelector("#offset-bottom-value")
 const rangeBottom = document.querySelector("#offset-bottom")
 const fontSizeRange = document.querySelector("#font-size")
 const fontSizeValue = document.querySelector("#font-size-value")
+const downloadButton = document.querySelector("#download-button")
+const fontFamilySelect = document.querySelector("#font-family")
 let offsetTop = 0
 let offsetBottom = 0
-let fontSize = 100
+let fontSize = 60
 let picture
 
 choosenPicture.addEventListener("change", function (e) {
@@ -42,7 +44,7 @@ function updateMeme(canvas, picture, textTop, textBottom) {
         ctx.fillStyle = "white"
         ctx.textAlign = "center"
         ctx.lineJoin = "round"
-        ctx.font = `${fontSize}px Lato`
+        ctx.font = `${fontSize}px ${fontFamilySelect.value}`
 
         ctx.textBaseLine = "top"
         ctx.strokeText(textTop, canvasWidth / 2, offsetY + offsetTop)
@@ -69,13 +71,45 @@ rangeTop.addEventListener("input", function () {
 
 rangeBottom.addEventListener("input", function () {
     rangeBottomLabel.textContent = rangeBottom.value
-    offsetBottom = rangeBottom.value * 5
+    offsetBottom = rangeBottom.value * 3
     updateMeme(canvas, picture, textTop.value, textBottom.value)
 })
 
 fontSizeRange.addEventListener("input", function () {
     fontSizeValue.textContent = `Rozmiar czcionki: ${fontSizeRange.value}`
-    fontSize = fontSizeRange.value * 10
+    fontSize = fontSizeRange.value * 6
     updateMeme(canvas, picture, textTop.value, textBottom.value)
 })
 
+downloadButton.addEventListener("click", function () {
+    if (!picture) {
+        alert("Najpierw wybierz obrazek!")
+        return
+    }
+    const link = document.createElement("a")
+    link.download = "meme.png"
+    link.href = canvas.toDataURL()
+    link.click()
+})
+
+fontFamilySelect.addEventListener("change", function () {
+    fontFamily = fontFamilySelect.value
+    updateMeme(canvas, picture, textTop.value, textBottom.value)
+})
+
+function setStyle(file) {
+    document.getElementById("theme-style").setAttribute("href", file);
+
+    document.querySelectorAll(".theme-buttons button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    document.querySelector(`.theme-buttons button[onclick="setStyle('${file}')"]`)
+        .classList.add("active");
+}
+
+window.onload = () => {
+    const saved = localStorage.getItem("theme");
+    if (saved) {
+        document.getElementById("theme-style").setAttribute("href", saved);
+    }
+};

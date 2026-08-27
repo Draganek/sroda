@@ -2,23 +2,25 @@
     box-sizing: border-box;
 }
 
-/* TŁO STRONY */
+/* TŁO STRONY — miękki, pastelowy glow */
 body {
-    background: linear-gradient(to right, #0f1c2e, #142f3d, #0a1a24);
-    color: white;
-    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #1b1f27, #0f1117 60%);
+    color: #e8e8e8;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* GŁÓWNY KONTENER */
+/* GŁÓWNY KONTENER — glassmorphism */
 #container {
     max-width: 600px;
     margin: 40px auto;
     padding: 30px;
     border-radius: 20px;
-    background: radial-gradient(circle, #0f3f4a 0%, #081014 100%);
-    border: 3px solid black; /* było 5px – wyglądało zbyt ciężko */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
 
 /* UKRYTY INPUT OBRAZKA */
@@ -26,36 +28,40 @@ body {
     display: none;
 }
 
-/* PRZYCISK WYBORU OBRAZKA */
+/* PRZYCISK WYBORU OBRAZKA — pastelowy gradient */
 #image-button {
     display: block;
     width: 100%;
     padding: 20px;
-    background-color: rgb(12, 19, 80);
-    border-radius: 8px;
+    background: linear-gradient(135deg, #6f9cff, #9f6fff);
+    border-radius: 10px;
     text-align: center;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
-    border: 3px solid black;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: none;
+    color: white;
+    box-shadow: 0 8px 20px rgba(111, 156, 255, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 #image-button:hover {
     cursor: pointer;
-    background-color: rgb(18, 27, 110);
-    transform: scale(1.01);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(159, 111, 255, 0.5);
 }
 
 .icon {
     width: 80px;
 }
 
-/* NAGŁÓWEK */
+/* NAGŁÓWEK — pastelowy glow */
 h1 {
     text-transform: uppercase;
     text-align: center;
     font-size: 40px;
     margin-bottom: 20px;
+    color: #b8c7ff;
+    text-shadow: 0 0 12px rgba(184, 199, 255, 0.4);
 }
 
 /* PANEL */
@@ -64,98 +70,112 @@ h1 {
     margin: 0 auto;
 }
 
-/* INPUTY TEKSTOWE */
+/* INPUTY — glass + pastel border */
 .textbox {
     width: 100%;
     padding: 12px;
     font-size: 20px;
     margin-bottom: 20px;
-    border: 3px solid black;
-    border-radius: 6px;
-    background: #fff;
-    color: #000;
-    transition: opacity 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8e8e8;
+    backdrop-filter: blur(6px);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .textbox:hover {
     cursor: pointer;
-    opacity: 0.85;
+    border-color: #9f6fff;
+    box-shadow: 0 0 10px rgba(159, 111, 255, 0.4);
 }
 
-/* BOXY */
+/* BOXY — glass + lekki glow */
 .box {
-    border: 3px solid black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px;
     margin: 10px 0;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
-    background: #0f4048;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 15px rgba(111, 156, 255, 0.15);
 }
 
 /* CANVAS */
 canvas {
     width: 100%;
-    border: 3px solid black;
+    border: 1px solid rgba(255, 255, 255, 0.25);
     display: none;
     border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
 }
 
-/* RANGE SLIDER */
+/* RANGE SLIDER — pastelowy, elegancki */
 .offset-range {
     -webkit-appearance: none;
     width: 100%;
     background: transparent;
+    height: 22px;
+    margin: 10px 0;
 }
 
 .offset-range::-webkit-slider-runnable-track {
-    height: 12px;
-    background: #b9ab26;
+    height: 8px;
+    background: linear-gradient(90deg, #6f9cff, #9f6fff);
     border-radius: 6px;
 }
 
 .offset-range::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     background: #fff;
     border-radius: 50%;
-    margin-top: -4px;
+    margin-top: -7px;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(159, 111, 255, 0.4);
 }
 
 .range {
-    font-size: 30px;
+    font-size: 28px;
+    color: #b8c7ff;
 }
 
-/* SELECT FONTÓW – poprawiony */
+/* SELECT FONTÓW — glass + pastel border */
 #font-family {
     width: 100%;
     padding: 10px 14px;
     font-size: 18px;
     margin-bottom: 20px;
-    border: 2px solid #000;
-    border-radius: 6px;
-    background: #fff;
-    color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e8e8e8;
+    backdrop-filter: blur(6px);
     cursor: pointer;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #font-family:hover {
-    border-color: #444;
+    border-color: #6f9cff;
+    box-shadow: 0 0 10px rgba(111, 156, 255, 0.4);
 }
 
 #font-family:focus {
-    border-color: #1a73e8;
-    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.25);
+    border-color: #9f6fff;
+    box-shadow: 0 0 10px rgba(159, 111, 255, 0.4);
+    background: rgb(77, 76, 76);
     outline: none;
 }
 
-/* WARTOŚĆ RANGE */
+/* RANGE VALUE */
 .range-value {
     display: inline-block;
     width: 50px;
     text-align: center;
+    color: #b8c7ff;
 }
 
 /* GRUPY ELEMENTÓW */
@@ -168,27 +188,29 @@ canvas {
 #font-size-value {
     white-space: nowrap;
     font-weight: bold;
+    color: #9f6fff;
 }
 
-/* PRZYCISK POBIERANIA */
+/* PRZYCISK POBIERANIA — pastelowy gradient */
 #download-button {
     display: block;
     width: 100%;
     padding: 20px;
-    background-color: #33055b;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #9f6fff, #6f9cff);
+    border-radius: 10px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    border: 3px solid black;
+    border: none;
     color: white;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 8px 20px rgba(159, 111, 255, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 #download-button:hover {
     cursor: pointer;
-    background-color: #39086a;
-    transform: scale(1.01);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(111, 156, 255, 0.5);
 }
 
 /* TYTUŁY BOXÓW */
@@ -196,6 +218,8 @@ canvas {
     margin: 0 0 10px 0;
     font-size: 30px;
     text-align: center;
+    color: #b8c7ff;
+    text-shadow: 0 0 8px rgba(184, 199, 255, 0.4);
 }
 
 .theme-buttons {

@@ -5,17 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEME GENERATOR</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="theme-style" rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Open+Sans&family=Montserrat&display=swap"
+        rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <div id="container">
         <h1>
-            <img width="100px" src="dog_icon.png">
+            <img class="icon" src="dog_icon.png">
             Generator Memów!
         </h1>
         <div id="panel">
+
+            <div class="theme-buttons">
+                <button data-theme="default" onclick="setStyle('style.css')">Default</button>
+                <button data-theme="gaming" onclick="setStyle('style-gaming.css')">Gaming</button>
+                <button data-theme="neon" onclick="setStyle('style-neon.css')">Neon</button>
+                <button data-theme="glass" onclick="setStyle('style-glassmorphism.css')">Glass</button>
+            </div>
 
             <label id="image-button">
                 <input type="file" id="select-picture">
@@ -23,29 +32,47 @@
             </label>
 
             <div class="box">
-                <h3>Górny pasek</h3>
+                <h3 class="box-title">Górny pasek</h3>
                 <input type="text" id="text-top" class="textbox" placeholder="Wpisz...">
 
-                <label class="range">
-                    <span id="offset-top-value">0</span>
+                <label class="range group">
+                    <span id="offset-top-value" class="range-value">0</span>
                     <input type="range" id="offset-top" min="-100" max="100" class="offset-range" value="0">
                 </label>
             </div>
             <div class="box">
-                <h3>Dolny pasek</h3>
+                <h3 class="box-title">Dolny pasek</h3>
                 <input type="text" id="text-bottom" class="textbox" placeholder="Wpisz...">
 
-                <label class="range">
-                    <span id="offset-bottom-value">0</span>
+                <label class="range group">
+                    <span id="offset-bottom-value" class="range-value">0</span>
                     <input type="range" id="offset-bottom" min="-100" max="100" class="offset-range" value="0">
                 </label>
             </div>
             <div class="box range">
-                <span id="font-size-value">Rozmiar czcionki: 0</span>
+                <span id="font-size-value">Rozmiar czcionki: 10</span>
                 <input type="range" id="font-size" min="1" max="50" class="offset-range" value="10">
             </div>
 
+            <div class="box">
+                <h3 class="box-title">Czcionka</h3>
+                <select id="font-family">
+                    <option value="Impact" style="font-family: Impact;">Impact</option>
+                    <option value="Arial" style="font-family: Arial, sans-serif;">Arial</option>
+                    <option value="Verdana" style="font-family: Verdana, sans-serif;">Verdana</option>
+                    <option value="Georgia" style="font-family: Georgia, serif;">Georgia</option>
+                    <option value="Times New Roman" style="font-family: 'Times New Roman', serif;">Times New Roman
+                    </option>
+                    <option value="Courier New" style="font-family: 'Courier New', monospace;">Courier New</option>
+                    <option value="Trebuchet MS" style="font-family: 'Trebuchet MS', sans-serif;">Trebuchet MS</option>
+                    <option value="Comic Sans MS" style="font-family: 'Comic Sans MS', cursive;">Comic Sans MS</option>
+                </select>
+            </div>
+
+
             <canvas id="meme"></canvas>
+
+            <button id="download-button">Pobierz mema</button>
         </div>
 
     </div>

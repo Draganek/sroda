@@ -1,0 +1,326 @@
+* {
+    box-sizing: border-box;
+}
+
+/* TŁO STRONY — ciemne + subtelna animacja */
+body {
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    animation: bgPulse 10s infinite alternate;
+}
+
+@keyframes bgPulse {
+    0% { background-color: #000; }
+    50% { background-color: #0a0a0a; }
+    100% { background-color: #000; }
+}
+
+/* GŁÓWNY KONTENER — RGB obrys + glow */
+#container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #111, #0c0c0c);
+    border: 3px solid transparent;
+    animation: rgbBorder 4s linear infinite;
+    box-shadow: 0 0 25px rgba(0, 255, 150, 0.25), 0 0 35px rgba(0, 120, 255, 0.25);
+}
+
+@keyframes rgbBorder {
+    0% { border-color: #ff0000; }
+    25% { border-color: #00ff00; }
+    50% { border-color: #0000ff; }
+    75% { border-color: #ff00ff; }
+    100% { border-color: #ff0000; }
+}
+
+/* UKRYTY INPUT OBRAZKA */
+#select-picture {
+    display: none;
+}
+
+/* PRZYCISK WYBORU OBRAZKA — animowany RGB gradient */
+#image-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #00aaff, #00ff88, #ff00ff);
+    background-size: 300% 300%;
+    animation: rgbMove 5s infinite linear;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    border: 3px solid #000;
+    color: #000;
+    text-shadow: 0 0 4px rgba(255,255,255,0.4);
+    transition: transform 0.15s ease;
+}
+
+@keyframes rgbMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#image-button:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.icon {
+    width: 80px;
+}
+
+/* NAGŁÓWEK — neon RGB */
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #00ff88;
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #00aaff;
+}
+
+/* PANEL */
+#panel {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* INPUTY — pulsujący RGB obrys */
+.textbox {
+    width: 100%;
+    padding: 12px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border: 3px solid #00aaff;
+    border-radius: 6px;
+    background: #111;
+    color: #e6e6e6;
+    animation: rgbPulse 3s infinite alternate;
+}
+
+@keyframes rgbPulse {
+    0% { border-color: #00aaff; }
+    50% { border-color: #00ff88; }
+    100% { border-color: #ff00ff; }
+}
+
+.textbox:hover {
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0, 255, 150, 0.4);
+}
+
+/* BOXY — neonowy glow */
+.box {
+    border: 3px solid #00aaff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    text-align: center;
+    background: #0f4048;
+    animation: boxGlow 4s infinite alternate;
+}
+
+@keyframes boxGlow {
+    0% { box-shadow: 0 0 10px #00aaff; }
+    50% { box-shadow: 0 0 20px #00ff88; }
+    100% { box-shadow: 0 0 10px #ff00ff; }
+}
+
+/* CANVAS */
+canvas {
+    width: 100%;
+    border: 3px solid #00ff88;
+    display: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 150, 0.3);
+}
+
+/* RANGE SLIDER — LED bar */
+/* RANGE SLIDER — poprawiony, wycentrowany, gaming RGB */
+.offset-range {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    height: 22px; /* wysokość całego elementu */
+    display: block;
+    margin: 10px 0;
+}
+
+/* TRACK — poprawiona wysokość i centrowanie */
+.offset-range::-webkit-slider-runnable-track {
+    height: 10px; /* było za wysokie */
+    background: linear-gradient(90deg, #00aaff, #00ff88, #ff00ff);
+    background-size: 300% 300%;
+    animation: rgbMove 5s infinite linear;
+    border-radius: 6px;
+    position: relative;
+}
+
+/* THUMB — poprawione centrowanie */
+.offset-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ff88;
+
+    /* kluczowe: centrowanie thumb względem track */
+    margin-top: -6px; 
+}
+
+/* FIREFOX */
+.offset-range::-moz-range-track {
+    height: 10px;
+    background: linear-gradient(90deg, #00aaff, #00ff88, #ff00ff);
+    background-size: 300% 300%;
+    animation: rgbMove 5s infinite linear;
+    border-radius: 6px;
+}
+
+.offset-range::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00ff88;
+}
+
+
+.range {
+    font-size: 30px;
+}
+
+/* SELECT FONTÓW — RGB obrys */
+#font-family {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border: 3px solid #00aaff;
+    border-radius: 6px;
+    background: #111;
+    color: #e6e6e6;
+    animation: rgbPulse 3s infinite alternate;
+}
+
+#font-family:hover {
+    border-color: #00ff88;
+}
+
+/* RANGE VALUE */
+.range-value {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    color: #00ff88;
+}
+
+/* GRUPY ELEMENTÓW */
+.group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#font-size-value {
+    white-space: nowrap;
+    font-weight: bold;
+    color: #00aaff;
+}
+
+/* PRZYCISK POBIERANIA — animowany RGB gradient */
+#download-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #7a00ff, #00aaff, #00ff88);
+    background-size: 300% 300%;
+    animation: rgbMove 5s infinite linear;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    border: 3px solid #00ff88;
+    color: white;
+    text-shadow: 0 0 6px #00aaff;
+    transition: transform 0.15s ease;
+}
+
+#download-button:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+/* TYTUŁY BOXÓW */
+.box-title {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+    text-align: center;
+    color: #00ff88;
+    text-shadow: 0 0 8px #00aaff;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.theme-buttons button {
+    padding: 12px 22px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+
+    background: linear-gradient(135deg, #4a4a4a, #2a2a2a);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+/* HOVER */
+.theme-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(243, 242, 242, 0.644);
+}
+
+/* AKTYWNY MOTYW — automatycznie dodasz klasę JS-em */
+.theme-buttons button.active {
+    background: linear-gradient(135deg, #6f9cff, #9f6fff);
+    box-shadow: 0 0 18px rgba(240, 240, 241, 0.993);
+}
+
+/* INDYWIDUALNE KOLORY MOTYWÓW */
+.theme-buttons button[data-theme="gaming"] {
+    background: linear-gradient(135deg, #00aaff, #00ff88);
+}
+
+.theme-buttons button[data-theme="neon"] {
+    background: linear-gradient(135deg, #ff00ff, #00aaff);
+}
+
+.theme-buttons button[data-theme="default"] {
+    background: linear-gradient(135deg, #192b5c, #2b208d);
+}
+
+.theme-buttons button[data-theme="glass"] {
+    background: linear-gradient(135deg, #ffffff33, #ffffff11);
+    backdrop-filter: blur(6px);
+    color: #e8e8e8;
+}

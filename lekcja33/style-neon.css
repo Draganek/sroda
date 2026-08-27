@@ -2,23 +2,25 @@
     box-sizing: border-box;
 }
 
-/* TŁO STRONY */
+/* TŁO STRONY — neonowy, futurystyczny */
 body {
-    background: linear-gradient(to right, #0f1c2e, #142f3d, #0a1a24);
-    color: white;
-    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top left, #0a0f1f, #05070d 60%);
+    color: #e0e8ff;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* GŁÓWNY KONTENER */
+/* GŁÓWNY KONTENER — neonowy obrys + glow */
 #container {
     max-width: 600px;
     margin: 40px auto;
     padding: 30px;
     border-radius: 20px;
-    background: radial-gradient(circle, #0f3f4a 0%, #081014 100%);
-    border: 3px solid black; /* było 5px – wyglądało zbyt ciężko */
+    background: rgba(10, 15, 30, 0.85);
+    border: 2px solid #00eaff;
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.25);
+    backdrop-filter: blur(6px);
 }
 
 /* UKRYTY INPUT OBRAZKA */
@@ -26,36 +28,42 @@ body {
     display: none;
 }
 
-/* PRZYCISK WYBORU OBRAZKA */
-#image-button {
-    display: block;
-    width: 100%;
-    padding: 20px;
-    background-color: rgb(12, 19, 80);
-    border-radius: 8px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    border: 3px solid black;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-#image-button:hover {
-    cursor: pointer;
-    background-color: rgb(18, 27, 110);
-    transform: scale(1.01);
-}
-
 .icon {
     width: 80px;
 }
 
-/* NAGŁÓWEK */
+/* PRZYCISK WYBORU OBRAZKA — neonowy fiolet + glow */
+#image-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #6a00ff, #9b00ff);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    border: 2px solid #00eaff;
+    color: white;
+    text-shadow: 0 0 6px #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+#image-button:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
+}
+
+
+/* NAGŁÓWEK — neonowy glitch vibe */
 h1 {
     text-transform: uppercase;
     text-align: center;
     font-size: 40px;
     margin-bottom: 20px;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff, 0 0 20px #0088ff;
 }
 
 /* PANEL */
@@ -64,43 +72,47 @@ h1 {
     margin: 0 auto;
 }
 
-/* INPUTY TEKSTOWE */
+/* INPUTY — neonowe obramowanie + glow */
 .textbox {
     width: 100%;
     padding: 12px;
     font-size: 20px;
     margin-bottom: 20px;
-    border: 3px solid black;
+    border: 2px solid #ff00ff;
     border-radius: 6px;
-    background: #fff;
-    color: #000;
-    transition: opacity 0.2s ease;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e8ff;
+    backdrop-filter: blur(4px);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .textbox:hover {
     cursor: pointer;
-    opacity: 0.85;
+    border-color: #ff55ff;
+    box-shadow: 0 0 12px rgba(255, 0, 255, 0.4);
 }
 
-/* BOXY */
+/* BOXY — neon turkus + glow */
 .box {
-    border: 3px solid black;
+    border: 2px solid #00eaff;
     padding: 20px;
     margin: 10px 0;
     border-radius: 10px;
     text-align: center;
-    background: #0f4048;
+    background: rgba(0, 20, 30, 0.7);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
 }
 
 /* CANVAS */
 canvas {
     width: 100%;
-    border: 3px solid black;
+    border: 2px solid #00eaff;
     display: none;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
 }
 
-/* RANGE SLIDER */
+/* RANGE SLIDER — neonowy błękit */
 .offset-range {
     -webkit-appearance: none;
     width: 100%;
@@ -109,53 +121,59 @@ canvas {
 
 .offset-range::-webkit-slider-runnable-track {
     height: 12px;
-    background: #b9ab26;
+    background: #00aaff;
     border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
 }
 
 .offset-range::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     background: #fff;
     border-radius: 50%;
-    margin-top: -4px;
+    margin-top: -5px;
     cursor: pointer;
+    box-shadow: 0 0 10px #00eaff;
 }
 
 .range {
     font-size: 30px;
 }
 
-/* SELECT FONTÓW – poprawiony */
+/* SELECT FONTÓW — neonowy */
 #font-family {
     width: 100%;
     padding: 10px 14px;
     font-size: 18px;
     margin-bottom: 20px;
-    border: 2px solid #000;
+    border: 2px solid #ff00ff;
     border-radius: 6px;
-    background: #fff;
-    color: #000;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e0e8ff;
+    backdrop-filter: blur(4px);
     cursor: pointer;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #font-family:hover {
-    border-color: #444;
+    border-color: #ff55ff;
+    box-shadow: 0 0 12px rgba(255, 0, 255, 0.4);
 }
 
 #font-family:focus {
-    border-color: #1a73e8;
-    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.25);
+    border-color: #00eaff;
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.4);
+    background: #111;
     outline: none;
 }
 
-/* WARTOŚĆ RANGE */
+/* RANGE VALUE */
 .range-value {
     display: inline-block;
     width: 50px;
     text-align: center;
+    color: #00eaff;
 }
 
 /* GRUPY ELEMENTÓW */
@@ -168,27 +186,30 @@ canvas {
 #font-size-value {
     white-space: nowrap;
     font-weight: bold;
+    color: #ff00ff;
 }
 
-/* PRZYCISK POBIERANIA */
+/* PRZYCISK POBIERANIA — neonowy fiolet + glow */
 #download-button {
     display: block;
     width: 100%;
     padding: 20px;
-    background-color: #33055b;
+    background: linear-gradient(135deg, #7a00ff, #b300ff);
     border-radius: 8px;
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    border: 3px solid black;
+    border: 2px solid #00eaff;
     color: white;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-shadow: 0 0 6px #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 #download-button:hover {
     cursor: pointer;
-    background-color: #39086a;
-    transform: scale(1.01);
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.6);
 }
 
 /* TYTUŁY BOXÓW */
@@ -196,6 +217,8 @@ canvas {
     margin: 0 0 10px 0;
     font-size: 30px;
     text-align: center;
+    color: #00eaff;
+    text-shadow: 0 0 8px #00eaff;
 }
 
 .theme-buttons {
