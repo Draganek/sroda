@@ -22,7 +22,7 @@ choosenPicture.addEventListener("change", function (e) {
     picture.src = pictureUrl
 
     picture.addEventListener("load", function () {
-        console.log("Wczytywanie obrazka...");
+        console.log("Loading image...");
         updateMeme(canvas, picture, textTop.value, textBottom.value)
     })
 })
@@ -76,14 +76,14 @@ rangeBottom.addEventListener("input", function () {
 })
 
 fontSizeRange.addEventListener("input", function () {
-    fontSizeValue.textContent = `Rozmiar czcionki: ${fontSizeRange.value}`
+    fontSizeValue.textContent = `Font Size: ${fontSizeRange.value}`
     fontSize = fontSizeRange.value * 6
     updateMeme(canvas, picture, textTop.value, textBottom.value)
 })
 
 downloadButton.addEventListener("click", function () {
     if (!picture) {
-        alert("Najpierw wybierz obrazek!")
+        alert("Choose a picture first!")
         return
     }
     const link = document.createElement("a")
@@ -99,6 +99,7 @@ fontFamilySelect.addEventListener("change", function () {
 
 function setStyle(file) {
     document.getElementById("theme-style").setAttribute("href", file);
+    localStorage.setItem("theme", file);
 
     document.querySelectorAll(".theme-buttons button")
         .forEach(btn => btn.classList.remove("active"));
@@ -111,5 +112,6 @@ window.onload = () => {
     const saved = localStorage.getItem("theme");
     if (saved) {
         document.getElementById("theme-style").setAttribute("href", saved);
+        document.getElementById(saved).classList.add("active");
     }
 };
