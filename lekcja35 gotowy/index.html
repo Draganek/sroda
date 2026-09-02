@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer=""></script>
+    <link rel="icon" href="twitter.png" />
+    <title>Twitter</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="twitter.png" class="twitter-logo">
+        <h1>Twitter</h1>
+        <form id="tweetForm">
+            <label for="username">Your username:</label>
+            <input type="text" id="username" name="username" required>
+            <p class="error-message" id="usernameError">
+                Please enter your username.
+            </p>
+            <label for="tweet">What’s happening?</label>
+            <textarea id="tweetContent" name="tweet" required></textarea>
+            <p class="error-message" id="tweetError">
+                Please enter your tweet.
+            </p>
+            <button type="submit">Tweet</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

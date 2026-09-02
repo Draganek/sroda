@@ -31,26 +31,32 @@ function updateMeme(canvas, picture, textTop, textBottom) {
     if (picture) {
         canvas.style.display = "block"
         const ctx = canvas.getContext("2d")
+
         const canvasWidth = picture.width
         const canvasHeight = picture.height
-        const offsetY = canvasHeight / 8
+
+        const scale = canvasWidth / 1000
+        const scaledFont = fontSize * scale
+
+        const offsetY = scale * 1.5
+
         canvas.width = canvasWidth
         canvas.height = canvasHeight
 
         ctx.drawImage(picture, 0, 0)
 
         ctx.strokeStyle = "black"
-        ctx.lineWidth = Math.floor(fontSize / 4)
+        ctx.lineWidth = Math.floor(scaledFont / 4)
         ctx.fillStyle = "white"
         ctx.textAlign = "center"
         ctx.lineJoin = "round"
-        ctx.font = `${fontSize}px ${fontFamilySelect.value}`
+        ctx.font = `${scaledFont}px ${fontFamilySelect.value}`
 
-        ctx.textBaseLine = "top"
+        ctx.textBaseline = "top"
         ctx.strokeText(textTop, canvasWidth / 2, offsetY + offsetTop)
         ctx.fillText(textTop, canvasWidth / 2, offsetY + offsetTop)
 
-        ctx.textBaseLine = "bottom"
+        ctx.textBaseline = "bottom"
         ctx.strokeText(textBottom, canvasWidth / 2, canvasHeight - offsetY - offsetBottom)
         ctx.fillText(textBottom, canvasWidth / 2, canvasHeight - offsetY - offsetBottom)
     }
