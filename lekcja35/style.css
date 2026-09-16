@@ -52,3 +52,20 @@ button:hover {
 h1 {
     color: #1da1f2;
 }
+
+#tweets {
+    margin-top: 20px;
+}
+
+.tweet {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.tweet strong {
+    color: #129bf0;
+    font-size: 20px;
+}
+
